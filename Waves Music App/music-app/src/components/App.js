@@ -24,6 +24,7 @@ const App = () => {
         audioRef={audioRef}
         songs={songs}
         setcurrentSong={setcurrentSong}
+        setSongs={setSongs}
       />
       <Library
         songs={songs}
