@@ -7,6 +7,9 @@
   background: rgb(255, 255, 255);
   box-shadow: 2px 2px 20px rgba(135, 146, 241, 0.788);
   overflow: scroll;
+  transform: translateX(-100%);
+  transition: all 0.5s ease;
+  opacity: 0;
   h2 {
     padding: 2rem;
   }
@@ -17,6 +20,7 @@
   align-items: center;
   padding: 1rem 2rem 1rem 2rem;
   cursor: pointer;
+  transition: all 0.3s ease;
   img {
     width: 30%;
   }
@@ -51,4 +55,9 @@
 
 .selected {
   background: rgba(155, 174, 236, 0.699);
+}
+
+.active-library {
+  transform: translateX(0%);
+  opacity: 1;
 }
