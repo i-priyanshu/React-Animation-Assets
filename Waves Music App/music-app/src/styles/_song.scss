@@ -7,11 +7,20 @@
   img {
     width: 20%;
     border-radius: 50%;
+    box-shadow: 2px 2px 20px rgba(136, 143, 240, 0.788);
   }
   h2 {
     padding: 3rem 1rem 1rem 1rem;
   }
   h3 {
     font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .song-container {
+    img {
+      width: 40%;
+    }
   }
 }

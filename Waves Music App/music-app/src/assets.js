@@ -18,7 +18,7 @@ const chillhop = () => {
         "https://chillhop.com/wp-content/uploads/2020/07/ff35dede32321a8aa0953809812941bcf8a6bd35-1024x1024.jpg",
       artist: "Swørn",
       audio: "https://mp3.chillhop.com/serve.php/?mp3=9224",
-      color: ["#BE487D", "#2C104A"],
+      color: ["#2C104A", "#BE487D"],
       id: uuidv4(),
       active: false,
     },
