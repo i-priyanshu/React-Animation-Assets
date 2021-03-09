@@ -8,7 +8,10 @@ const GlobalStyle = createGlobalStyle`
 }
 body{
     background: #1b1b1b;
+    font-family: 'Inter' , sans-serif;
+
 }
+
 button{
     font-weight: bold;
     font-size: 1.1.rem;
@@ -18,6 +21,7 @@ button{
     background: transparent;
     color: white;
     transition: all 0.5s ease;
+    font-family: 'Inter' , sans-serif;
     &:hover{
         background-color: #23d997;
         color: white;
@@ -32,7 +36,7 @@ button{
     }
     h4{
         font-weight: bold;
-       
+       font-size: 2rem;
     }
     a{
         font-size: 1.1rem;
@@ -47,6 +51,7 @@ button{
         font-size: 1.4rem;
         line-height: 150%;
     }
+
 `;
 
 export default GlobalStyle;
