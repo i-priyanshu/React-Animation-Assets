@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { About } from "../styles";
+import Toggle from "./Toggle";
+import { AnimateSharedLayout } from "framer-motion";
 
 const FaqSection = () => {
   return (
@@ -8,50 +10,45 @@ const FaqSection = () => {
       <h2>
         Any Questions? <span>FAQ</span>
       </h2>
-      <div className="questions">
-        <h4>How do i start ?</h4>
-        <div className="answer">
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat,
-            enim?
-          </p>
-        </div>
-        <div className="faq-line"></div>
-      </div>
-      <div className="questions">
-        <h4>Daily Schedule</h4>
-        <div className="answer">
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat,
-            enim?
-          </p>
-          <div className="faq-line"></div>
-        </div>
-      </div>
-      <div className="questions">
-        <h4>difffrent payment methods</h4>
-        <div className="answer">
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat,
-            enim?
-          </p>
-          <div className="faq-line"></div>
-        </div>
-      </div>
-      <div className="questions">
-        <h4>products to offer</h4>
-        <div className="answer">
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat,
-            enim?
-          </p>
-          <div className="faq-line"></div>
-        </div>
-      </div>
+      <AnimateSharedLayout>
+        <Toggle title="How do I Start?">
+          <div className="answer">
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam
+              commodi fuga qui? Sequi tempora rem nisi itaque sapiente, numquam
+              pariatur!
+            </p>
+          </div>
+        </Toggle>
+        <Toggle title="Daily Schedule">
+          <div className="answer">
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat,
+              enim?
+            </p>
+          </div>
+        </Toggle>
+        <Toggle title="Difffrent payment methods">
+          <div className="answer">
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat,
+              enim?
+            </p>
+          </div>
+        </Toggle>
+        <Toggle title="products to offer">
+          <div className="answer">
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat,
+              enim?
+            </p>
+          </div>
+        </Toggle>
+      </AnimateSharedLayout>
     </Faq>
   );
 };
