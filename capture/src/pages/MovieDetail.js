@@ -3,8 +3,9 @@ import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 import { MovieState } from "../Moviestate";
 //Animations
-import { motion } from 'framer-motion'; 
-import {pageAnimation} from '../animate';
+import { motion } from "framer-motion";
+import { pageAnimation } from "../animate";
+import ScrollTop from "../components/ScrollTop";
 
 const MovieDetail = () => {
   const history = useHistory();
@@ -20,12 +21,13 @@ const MovieDetail = () => {
   return (
     <>
       {movie && (
-        <Details      
-         variants={pageAnimation}
-        initial="hidden"
-        animate="show"
-        exit="exit"
+        <Details
+          variants={pageAnimation}
+          initial="hidden"
+          animate="show"
+          exit="exit"
         >
+          <ScrollTop />
           <HeadLine>
             <h2>{movie.title}</h2>
             <img src={movie.mainImg} alt="movie" />
@@ -48,7 +50,7 @@ const MovieDetail = () => {
   );
 };
 
-const Details = styled(motion.div)` 
+const Details = styled(motion.div)`
   color: white;
 `;
 
@@ -67,6 +69,11 @@ const HeadLine = styled.div`
     height: 70vh;
     object-fit: cover;
   }
+  @media (max-width: 1500px) {
+    h2 {
+      top: 5%;
+    }
+  }
 `;
 
 const Awards = styled.div`
@@ -75,6 +82,10 @@ const Awards = styled.div`
   margin: 5rem 10rem;
   align-items: center;
   justify-content: space-around;
+  @media (max-width: 1500px) {
+    display: block;
+    margin: 2rem 2rem;
+  }
 `;
 
 const AwardStyle = styled.div`

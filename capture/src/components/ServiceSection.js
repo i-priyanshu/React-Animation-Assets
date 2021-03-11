@@ -10,10 +10,6 @@ import { About, Description, Image } from "../styles";
 import { scrollEffect } from "../animate";
 import { useScroll } from "./useScroll";
 
-//TEST
-import { useInView } from "react-intersection-observer";
-import { useAnimation } from "framer-motion";
-
 const ServiceSection = () => {
   const [element, controls] = useScroll();
 
@@ -72,13 +68,16 @@ h2 {
 }
 p {
   width: 70%;
-  padding: 2rem 0rem;
+  padding: 2rem 0rem 4rem 0rem;
 }
 `;
 
 const Cards = Styled.div`
     display:flex;
     flex-wrap: wrap;
+    @media (max-width: 1300px) {
+       justify-content: center; 
+      }
 `;
 const Card = Styled.div`
 flex-basis : 20rem;
