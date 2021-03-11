@@ -3,10 +3,13 @@ import styled from "styled-components";
 import { About } from "../styles";
 import Toggle from "./Toggle";
 import { AnimateSharedLayout } from "framer-motion";
+import { useScroll } from "./useScroll";
+import { scrollEffect } from "../animate";
 
 const FaqSection = () => {
+  const [element, controls] = useScroll();
   return (
-    <Faq>
+    <Faq variants={scrollEffect} ref={element} animate={controls}>
       <h2>
         Any Questions? <span>FAQ</span>
       </h2>
@@ -55,6 +58,7 @@ const FaqSection = () => {
 
 const Faq = styled(About)`
   display: block;
+
   span {
     display: block;
   }
@@ -69,7 +73,7 @@ const Faq = styled(About)`
     width: 100%;
   }
   .question {
-    padding: 3rem 0rem;
+    padding: 5rem 0rem 0rem 0rem;
     cursor: pointer;
   }
   .answer {

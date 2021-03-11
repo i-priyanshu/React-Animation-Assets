@@ -7,17 +7,23 @@ import home2 from "../images/home2.png";
 
 import Styled from "styled-components";
 import { About, Description, Image } from "../styles";
+import { scrollEffect } from "../animate";
+import { useScroll } from "./useScroll";
 
 //TEST
-import { useInview } from "react-intersection-observer";
+import { useInView } from "react-intersection-observer";
 import { useAnimation } from "framer-motion";
 
 const ServiceSection = () => {
-  const [element, view] = useView();
-  console.log(view);
+  const [element, controls] = useScroll();
 
   return (
-    <Services>
+    <Services
+      variants={scrollEffect}
+      animate={controls}
+      initial="hidden"
+      ref={element}
+    >
       <Description>
         <h2>
           High <span>quality</span> services

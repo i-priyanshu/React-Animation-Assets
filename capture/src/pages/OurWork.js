@@ -7,7 +7,7 @@ import athlete from "../images/athlete-small.png";
 import theracer from "../images/theracer-small.png";
 import goodtimes from "../images/goodtimes-small.png";
 //Animations
-import { motion } from "framer-motion";
+import { DragControls, motion } from "framer-motion";
 import {
   sliderContainer,
   slider,
@@ -15,9 +15,14 @@ import {
   fade,
   photoAnim,
   lineAnim,
+  swoopAdoop,
 } from "../animate";
 
-const ourWork = () => {
+import { useScroll } from "../components/useScroll";
+
+const OurWork = () => {
+  const [element, controls] = useScroll();
+  const [element2, controls2] = useScroll();
   return (
     <Work
       style={{ background: "#fff" }}
@@ -33,7 +38,7 @@ const ourWork = () => {
         <Frame4 variants={slider}></Frame4>
       </motion.div>
       <Movie>
-        <motion.h2 variants={fade}>The Athlete</motion.h2>
+        <motion.h2 variants={fade}> The Athlete</motion.h2>
         <motion.div variants={lineAnim} className="line"></motion.div>
         <Link to="/work/the-athlete">
           <Hide>
@@ -41,16 +46,21 @@ const ourWork = () => {
           </Hide>
         </Link>
       </Movie>
-      <Movie>
-        <motion.h2>the Racer</motion.h2>
-        <div className="line"></div>
+      <Movie ref={element} variants={fade} animate={controls} initial="hidden">
+        <h2>the Racer</h2>
+        <motion.div variants={lineAnim} className="line"></motion.div>
         <Link to="/work/the-racer">
           <img src={theracer} alt="athlete" />
         </Link>
       </Movie>
-      <Movie>
-        <motion.h2>Good Times</motion.h2>
-        <div className="line"></div>
+      <Movie
+        ref={element2}
+        variants={fade}
+        animate={controls2}
+        initial="hidden"
+      >
+        <h2>Good Times</h2>
+        <motion.div variants={lineAnim} className="line"></motion.div>
         <Link to="/work/good-times">
           <img src={goodtimes} alt="goodtimes" />
         </Link>
@@ -68,7 +78,8 @@ const Work = styled(motion.div)`
   }
 `;
 
-const Movie = styled.div`
+const Movie = styled(motion.div)`
+  overflow: hidden;
   padding-bottom: 10rem;
   .line {
     height: 0.5rem;
@@ -107,4 +118,4 @@ const Frame3 = styled(Frame1)`
 const Frame4 = styled(Frame1)`
   background: #8effa0;
 `;
-export default ourWork;
+export default OurWork;
