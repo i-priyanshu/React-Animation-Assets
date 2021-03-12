@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import AboutUs from "../pages/Aboutus";
 
 const ScrollTop = () => {
   const { pathname } = useLocation();
@@ -9,7 +8,7 @@ const ScrollTop = () => {
       top: 0,
       left: 0,
     });
-  });
+  }, [pathname]);
 
   return null;
 };

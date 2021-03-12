@@ -7,7 +7,7 @@ import athlete from "../images/athlete-small.png";
 import theracer from "../images/theracer-small.png";
 import goodtimes from "../images/goodtimes-small.png";
 //Animations
-import { DragControls, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   sliderContainer,
   slider,
@@ -15,7 +15,6 @@ import {
   fade,
   photoAnim,
   lineAnim,
-  swoopAdoop,
 } from "../animate";
 
 import { useScroll } from "../components/useScroll";
