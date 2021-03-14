@@ -7,12 +7,12 @@ export const loadGames = () => async (dispatch) => {
       key: "9c9c466b87b54e058f94d75b083c6cd8",
     },
   });
-  const newgamesData = await axios.get(upcomingGamesURL(), {
+  const newgamesData = await axios.get(newGamesURL(), {
     params: {
       key: "9c9c466b87b54e058f94d75b083c6cd8",
     },
   });
-  const upcomingrData = await axios.get(newGamesURL(), {
+  const upcomingData = await axios.get(upcomingGamesURL(), {
     params: {
       key: "9c9c466b87b54e058f94d75b083c6cd8",
     },
@@ -22,7 +22,7 @@ export const loadGames = () => async (dispatch) => {
     type: "FETCH_GAMES",
     payload: {
       popular: popularData.data.results,
-      upcoming: upcomingrData.data.results,
+      upcoming: upcomingData.data.results,
       newGames: newgamesData.data.results,
     },
   });
