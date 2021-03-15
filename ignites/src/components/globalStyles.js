@@ -13,6 +13,9 @@ const GlobalStyles = createGlobalStyle`
         &::-webkit-scrollbar-thumb {
             background-color: darkgrey;
         }
+        &::-webkit-scrollbar-track {
+            background: white;
+         }
     }
     body {
         font-family: 'Montserrat', sans-serif;
@@ -32,7 +35,7 @@ const GlobalStyles = createGlobalStyle`
         }
         p {
             font-size: 1.2rem;
-            line-height: 200%;
+            line-height: 150%;
             color: #696969;
         }
         a {
