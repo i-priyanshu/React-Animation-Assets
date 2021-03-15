@@ -10,26 +10,26 @@ const GameDetail = () => {
   return (
     <Cardshadow>
       <Detail>
-        <div className="stats">
+        <Stats>
           <div className="rating">
             <h3>{game.name}</h3>
             <p>Rating: {game.rating}</p>
           </div>
-          <div className="Info">
+          <Info>
             <h3>Platforms</h3>
-            <div className="platforms">
+            <Platforms>
               {game.platforms.map((data) => (
                 <h3 key={data.platform.id}>{data.platform.name}</h3>
               ))}
-            </div>
-          </div>
-        </div>
-        <div className="media">
+            </Platforms>
+          </Info>
+        </Stats>
+        <Media>
           <img src={game.background_image} alt="b_image" />
-        </div>
-        <div className="description">
+        </Media>
+        <Description>
           <p>{game.description_raw}</p>
-        </div>
+        </Description>
         <div className="gallery">
           {screen.results.map((screen) => (
             <img src={screen.image} key={screen.image.id} alt="screenshots" />
@@ -54,22 +54,51 @@ const Cardshadow = styled(motion.div)`
   &::-webkit-scrollbar-thumb {
     background-color: #ff7676;
   }
-  &::-webkit-scrollbar-track {
-    background: white;
-  }
 `;
 
 const Detail = styled(motion.div)`
-  width: 80%;
+  width: 70%;
   border-radius: 1rem;
-  padding: 2rem 20rem;
+  padding: 2rem 3rem;
   background: white;
   position: absolute;
-  left: 10%;
+  left: 15%;
   color: black;
+  margin-top: 1rem;
   img {
     width: 100%;
   }
+`;
+
+const Stats = styled(motion.div)`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+const Info = styled(motion.div)`
+  text-align: center;
+`;
+
+const Platforms = styled(motion.div)`
+  display: flex;
+  justify-content: space-evenly;
+  img {
+    margin-left: 3rem;
+  }
+`;
+
+const Media = styled(motion.div)`
+  margin-top: 5rem;
+  img {
+    width: 100%;
+    height: 55vh;
+    object-fit: cover;
+  }
+`;
+
+const Description = styled(motion.div)`
+  margin: 5rem 0rem;
 `;
 
 export default GameDetail;
