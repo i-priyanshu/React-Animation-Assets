@@ -6,14 +6,42 @@ import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { smallImage } from "./util";
+//IMAGES
+import Playstation from "../images/playstation.svg";
+import Steam from "../images/steam.svg";
+import xbox from "../images/xbox.svg";
+import nintendo from "../images/nintendo.svg";
+import apple from "../images/apple.svg";
+import gamepad from "../images/gamepad.svg";
 
 const GameDetail = ({ pathId }) => {
   const history = useHistory();
+
   const exitDetailHandler = (e) => {
     const element = e.target;
     if (element.classList.contains("shadow")) {
       document.body.style.overflow = "auto";
       history.push("/");
+    }
+  };
+
+  //get platforms images
+  const getPlatform = (platform) => {
+    switch (platform) {
+      case "PlayStation 4":
+        return Playstation;
+      case "PlayStation 5":
+        return Playstation;
+      case "Xbox One":
+        return xbox;
+      case "PC":
+        return Steam;
+      case "Nintendo Switch":
+        return nintendo;
+      case "iOS":
+        return apple;
+      default:
+        return gamepad;
     }
   };
 
@@ -33,7 +61,10 @@ const GameDetail = ({ pathId }) => {
                 <h3>Platforms</h3>
                 <Platforms>
                   {game.platforms.map((data) => (
-                    <h3 key={data.platform.id}>{data.platform.name}</h3>
+                    <img
+                      key={data.platform.id}
+                      src={getPlatform(data.platform.name)}
+                    ></img>
                   ))}
                 </Platforms>
               </Info>
