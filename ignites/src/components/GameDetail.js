@@ -128,14 +128,15 @@ const Cardshadow = styled(motion.div)`
 `;
 
 const Detail = styled(motion.div)`
-  width: 70%;
+  width: 80%;
   border-radius: 1rem;
   padding: 1rem 2.3rem;
   background: white;
   position: absolute;
-  left: 15%;
+  left: 10%;
   color: black;
   margin-top: 1rem;
+  margin-bottom: 1rem;
   img {
     width: 100%;
   }

@@ -20,7 +20,7 @@ const GlobalStyles = createGlobalStyle`
     body {
         font-family: 'Montserrat', sans-serif;
         width: 100%;
-
+        margin-bottom: 2rem;
         h2 {
             font-size: 3rem;
             font-family: 'Comfortaa', cursive;

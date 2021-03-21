@@ -27,9 +27,9 @@ const nextYear = `${currentYear + 1}-${currentMonth}-${currentDay}`;
 
 const LastYear = 2019;
 //Popular games
-const popularGames = `games?dates=${LastYear},${currentDate}&page_size=10`;
-const upcomingGames = `games?dates=${currentDate},${nextYear}&ordering=-added&page_size=10`;
-const newGames = `games?dates=${lastYear},${currentDate}&page_size=10`;
+const popularGames = `games?dates=${LastYear},${currentDate}&page_size=12`;
+const upcomingGames = `games?dates=${currentDate},${nextYear}&ordering=-added&page_size=12`;
+const newGames = `games?dates=${lastYear},${currentDate}&page_size=12`;
 
 export const upcomingGamesURL = () => `${Base_URL}${upcomingGames}`;
 export const populargamesURL = () => `${Base_URL}${popularGames}`;
