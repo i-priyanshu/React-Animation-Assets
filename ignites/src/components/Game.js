@@ -15,6 +15,7 @@ const Game = ({ name, image, released, id }) => {
   const loadDetailHandler = () => {
     document.body.style.overflow = "hidden";
     dispatch(loadDetail(id));
+    // console.log(stringPathId);
   };
 
   return (
@@ -22,15 +23,15 @@ const Game = ({ name, image, released, id }) => {
       variants={popup}
       initial="hidden"
       animate="show"
-      LayoutId={stringPathId}
+      layoutId={stringPathId}
       onClick={loadDetailHandler}
     >
       <Link to={`/game/${id}`}>
-        <motion.h3 LayoutId={`title ${stringPathId}`}>{name}</motion.h3>
+        <motion.h3 layoutId={`title ${stringPathId}`}>{name}</motion.h3>
         <p>{released}</p>
         <motion.img
-          LayoutId={`image ${stringPathId}`}
-          src={smallImage(image, 640)}
+          layoutId={`image ${stringPathId}`}
+          src={smallImage(image, 600)}
           alt={name}
         />
       </Link>
@@ -49,6 +50,11 @@ const StyledGame = styled(motion.div)`
     width: 100%;
     height: 40vh;
     object-fit: cover;
+  }
+
+  &:hover {
+    box-shadow: 2px 2px 20px rgba(135, 146, 241, 0.5);
+    transition-delay: all 0.5s ease;
   }
 `;
 

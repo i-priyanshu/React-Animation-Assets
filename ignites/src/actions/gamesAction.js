@@ -1,4 +1,5 @@
 import axios from "axios";
+import { key } from "../API/key";
 import {
   populargamesURL,
   upcomingGamesURL,
@@ -9,17 +10,17 @@ import {
 export const loadGames = () => async (dispatch) => {
   const popularData = await axios.get(populargamesURL(), {
     params: {
-      key: "9c9c466b87b54e058f94d75b083c6cd8",
+      key: `${key}`,
     },
   });
   const newgamesData = await axios.get(newGamesURL(), {
     params: {
-      key: "9c9c466b87b54e058f94d75b083c6cd8",
+      key: `${key}`,
     },
   });
   const upcomingData = await axios.get(upcomingGamesURL(), {
     params: {
-      key: "9c9c466b87b54e058f94d75b083c6cd8",
+      key: `${key}`,
     },
   });
 

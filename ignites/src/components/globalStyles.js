@@ -36,7 +36,7 @@ const GlobalStyles = createGlobalStyle`
         p {
             font-size: 1.2rem;
             line-height: 150%;
-            color: #696969;
+            color: #232323;
         }
         a {
             text-decoration: none;
@@ -46,8 +46,8 @@ const GlobalStyles = createGlobalStyle`
         img {
             display : block;
         }
+        overflow-x:hidden;
     }
-
 `;
 
 export default GlobalStyles;

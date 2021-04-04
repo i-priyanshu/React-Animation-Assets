@@ -66,10 +66,10 @@ const GameDetail = ({ pathId }) => {
     <>
       {!isLoading && (
         <Cardshadow className="shadow" onClick={exitDetailHandler}>
-          <Detail LayoutId={pathId}>
+          <Detail layoutId={pathId}>
             <Stats>
               <div className="rating">
-                <motion.h3 LayoutId={`title ${pathId}`}>{game.name}</motion.h3>
+                <motion.h3 layoutId={`title ${pathId}`}>{game.name}</motion.h3>
                 <p>Rating: {game.rating}</p>
                 {getStars()}
               </div>
@@ -78,6 +78,7 @@ const GameDetail = ({ pathId }) => {
                 <Platforms>
                   {game.platforms.map((data) => (
                     <img
+                      alt={data.platform.name}
                       key={data.platform.id}
                       src={getPlatform(data.platform.name)}
                     ></img>
@@ -87,9 +88,9 @@ const GameDetail = ({ pathId }) => {
             </Stats>
             <Media>
               <motion.img
-                LayoutId={`image ${pathId}`}
-                src={smallImage(game.background_image, 640)}
-                alt="b_image"
+                layoutId={`image ${pathId}`}
+                src={smallImage(game.background_image, 1280)}
+                alt={game.background_image}
               />
             </Media>
             <Description>
@@ -98,9 +99,9 @@ const GameDetail = ({ pathId }) => {
             <div className="gallery">
               {screen.results.map((screen) => (
                 <img
-                  src={screen.image}
+                  src={smallImage(screen.image, 1280)}
                   alt="screenshots"
-                  key={screen.image.id}
+                  key={screen.image}
                 />
               ))}
             </div>
@@ -119,6 +120,7 @@ const Cardshadow = styled(motion.div)`
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 10;
   &::-webkit-scrollbar {
     width: 0.5rem;
   }
@@ -169,7 +171,7 @@ const Media = styled(motion.div)`
   margin-top: 5rem;
   img {
     width: 100%;
-    height: 55vh;
+    height: 60vh;
     object-fit: cover;
   }
 `;

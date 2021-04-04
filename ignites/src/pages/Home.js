@@ -13,6 +13,7 @@ const Home = () => {
   //get the current location
   const location = useLocation();
   const pathId = location.pathname.split("/")[2];
+  console.log(pathId);
   //FETCH GAMES
   const dispatch = useDispatch();
   useEffect(() => {
