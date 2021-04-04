@@ -1,4 +1,4 @@
-# you can visit the App at [Ignite](https://ignites-3165m7nyf-i-priyanshu.vercel.app/)
+# you can visit the App at [Ignite](https://ignites.vercel.app/)
 
 ## Available Scripts
 
