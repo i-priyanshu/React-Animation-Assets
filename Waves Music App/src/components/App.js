@@ -5,6 +5,7 @@ import "../styles/app.scss";
 import data from "../assets";
 import Library from "./Library";
 import Nav from "./nav";
+import GithubCorner from 'react-github-corner';
 
 const App = () => {
   const audioRef = useRef(null);
@@ -15,6 +16,14 @@ const App = () => {
 
   return (
     <div className={`App ${libraryStatus ? "library-active" : ""}`}>
+     <GithubCorner
+        href="https://github.com/i-priyanshu/React-Animation-Assets/tree/main/ignites"
+        bannerColor="#FD6C6C"
+        octoColor="#fff"
+        size={100}
+        direction="right"
+        target="_blank"
+      />
       <Nav libraryStatus={libraryStatus} setLibraryStatus={setLibraryStatus} />
       <Song currentsong={currentsong} />
       <Player
